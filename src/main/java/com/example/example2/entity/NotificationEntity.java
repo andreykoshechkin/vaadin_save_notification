@@ -21,7 +21,7 @@ public class NotificationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDate date_create;
+    private LocalDateTime date_create;
 
     private LocalDateTime date_notification;
 

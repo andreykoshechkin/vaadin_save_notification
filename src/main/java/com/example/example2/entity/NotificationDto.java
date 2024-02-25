@@ -17,7 +17,7 @@ public class NotificationDto {
 
     private Long id;
 
-    private LocalDate date_create;
+    private LocalDateTime date_create;
 
     private LocalDateTime date_notification;
 }

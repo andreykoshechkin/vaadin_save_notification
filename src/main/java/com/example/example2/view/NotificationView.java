@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 
 @Route("main")
@@ -29,8 +30,8 @@ public class NotificationView extends HorizontalLayout {
 
     private Binder<NotificationDto> binder;
 
-    public NotificationView(NotificationService notificationService) {
-        this.notificationService = notificationService;
+    public NotificationView( ) {
+
 
         Button button = new Button("Напоминание");
         dialog = new Dialog();
@@ -44,10 +45,10 @@ public class NotificationView extends HorizontalLayout {
             date.setValue(LocalDate.now().plusDays(1L));
 
             TimePicker time = new TimePicker("Время");
-            time.setStep(Duration.ofMinutes(1)); // Установить шаг в минуту
-            time.getElement().setProperty("timeFormat", "HH:mm"); // Установить формат времени
 
-            DateTimePicker dateTimePicker = new DateTimePicker();
+            time.setStep(Duration.ofMinutes(15));
+            time.setValue(LocalTime.of(12, 30));
+
 
             Button save = new Button("Сохранить");
 
