@@ -47,6 +47,8 @@ public class NotificationView extends HorizontalLayout {
             time.setStep(Duration.ofMinutes(1)); // Установить шаг в минуту
             time.getElement().setProperty("timeFormat", "HH:mm"); // Установить формат времени
 
+            DateTimePicker dateTimePicker = new DateTimePicker();
+
             Button save = new Button("Сохранить");
 
             save.addClickListener(event2 -> {
