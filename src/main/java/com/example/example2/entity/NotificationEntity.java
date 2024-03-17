@@ -25,4 +25,5 @@ public class NotificationEntity {
 
     private LocalDateTime date_notification;
 
+    private String timezone;
 }

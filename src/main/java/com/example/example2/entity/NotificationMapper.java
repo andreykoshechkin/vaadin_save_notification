@@ -18,8 +18,9 @@ public class NotificationMapper {
     public NotificationDto mapToDto(NotificationEntity entity) {
         return NotificationDto.builder()
                 .id(entity.getId())
-                .date_create(LocalDateTime.parse(LocalDateTime.now().format(DATE_TIME_FORMATTER)))
+
                 .date_notification(entity.getDate_notification())
+                .timezone(entity.getTimezone())
                 .build();
     }
 
@@ -28,10 +29,9 @@ public class NotificationMapper {
 
         return NotificationEntity.builder()
                 .id(dto.getId())
-                //   .date_create(LocalDate.parse(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))))
-                .date_create(dateTimeWithoutMillis)
-
+                .date_create(LocalDateTime.parse(LocalDateTime.now().format(DATE_TIME_FORMATTER)))
                 .date_notification(dto.getDate_notification())
+                .timezone(dto.getTimezone())
                 .build();
     }
 }

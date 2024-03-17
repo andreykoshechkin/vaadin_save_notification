@@ -20,4 +20,6 @@ public class NotificationDto {
     private LocalDateTime date_create;
 
     private LocalDateTime date_notification;
+
+    private String timezone;
 }
