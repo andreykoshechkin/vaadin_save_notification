@@ -3,6 +3,7 @@ package com.example.example2.view;
 import com.example.example2.entity.NotificationDto;
 import com.example.example2.entity.NotificationRepository;
 import com.example.example2.entity.NotificationService;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
@@ -41,10 +42,13 @@ public class TimeZoneRussia extends VerticalLayout {
             dialog.setWidth("350px");
             dialog.setHeight("450px");
 
+
+            UI.getCurrent().getSession().getBrowser().getAddress();
             Button saveNotification = new Button("Сохранить");
             DatePicker dateNotification = new DatePicker("Дата: ");
-            dateNotification.setValue(LocalDate.now());
 
+            dateNotification.setValue(LocalDate.now());
+            System.out.println();
             TimePicker timeNotification = new TimePicker("Время: ");
 
             ComboBox<String> timeZoneComboBox = new ComboBox<>("Выберите часовой пояс");
