@@ -1,8 +1,6 @@
 package com.example.example2.view;
 
 import com.example.example2.entity.NotificationDto;
-import com.example.example2.entity.NotificationRepository;
-import com.example.example2.entity.NotificationService;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
@@ -15,7 +13,6 @@ import com.vaadin.flow.component.timepicker.TimePicker;
 
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.Route;
-import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
 
@@ -30,7 +27,7 @@ import java.util.List;
 
 public class TimeZoneRussia extends VerticalLayout {
 
-    private NotificationService notificationService;
+
     private Binder<NotificationDto> notificationDtoBinder;
     public TimeZoneRussia() {
         Dialog dialog = new Dialog();

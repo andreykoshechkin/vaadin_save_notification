@@ -17,9 +17,8 @@ public class NotificationDto {
 
     private Long id;
 
-    private LocalDateTime date_create;
+    private LocalDateTime dateExist;
 
-    private LocalDateTime date_notification;
+    private LocalDateTime dateRepeated;
 
-    private String timezone;
 }

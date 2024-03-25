@@ -14,16 +14,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @Data
-@Table(name = "notification")
+@Table(name = "notification_example")
 public class NotificationEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime date_create;
+    @Column(name = "date_exist")
+    private LocalDateTime dateExist;
 
-    private LocalDateTime date_notification;
 
-    private String timezone;
 }

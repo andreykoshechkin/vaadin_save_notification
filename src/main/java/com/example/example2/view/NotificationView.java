@@ -1,10 +1,8 @@
 package com.example.example2.view;
 
 import com.example.example2.entity.NotificationDto;
-import com.example.example2.entity.NotificationService;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.datepicker.DatePicker;
-import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -25,8 +23,6 @@ public class NotificationView extends HorizontalLayout {
 
     private final Dialog dialog;
 
-    @Autowired
-    private NotificationService notificationService;
 
     private Binder<NotificationDto> binder;
 
@@ -55,8 +51,8 @@ public class NotificationView extends HorizontalLayout {
             save.addClickListener(event2 -> {
                 LocalDateTime dateTime = LocalDateTime.of(date.getValue(), time.getValue());
                 NotificationDto notification = new NotificationDto();
-                notification.setDate_notification(dateTime);
-                notificationService.save(notification);
+                notification.setDateExist(dateTime);
+
                 Notification.show("Напоминание сохранено!");
                 dialog.close(); // Закрыть диалоговое окно после сохранения
             });
